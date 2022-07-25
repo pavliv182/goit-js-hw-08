@@ -4,14 +4,14 @@ import Player from '@vimeo/player';
 const iframe = document.querySelector('#vimeo-player');
 const player = new Player(iframe);
 
-const CURRENT_TIME_KEY = 'videoplayer-current-time';
+const key = 'videoplayer-current-time';
 // console.log(player);
 
 function playerCurrentTime(evt) {
-  localStorage.setItem(CURRENT_TIME_KEY, evt.seconds);
+  localStorage.setItem(key, evt.seconds);
   // console.log(evt.seconds);
 }
 
-player.setCurrentTime(Number(localStorage.getItem(CURRENT_TIME_KEY)));
+player.setCurrentTime(Number(localStorage.getItem(key)));
 player.on('timeupdate', throttle(playerCurrentTime, 1000));
 // test/
