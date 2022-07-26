@@ -22,7 +22,7 @@ formEl.addEventListener('submit', evt => {
 
 // Эта функция заполняет поля формы данными из localstorage, после того, как мы перезагружаем страницу
 
-function formFill(form) {
+function fillForm(form) {
   const elements = form.elements;
 
   const localStorageData = JSON.parse(localStorage.getItem(FORM_KEY));
@@ -38,7 +38,7 @@ function formFill(form) {
   });
 }
 
-formFill(formEl);
+fillForm(formEl);
 
 // formData[name] = value;
 // - это
